@@ -3,45 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TOKIOKAZINO</title>
+  <title>Tokio Kazino</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
+      background: #0a0a0a;
+      color: #ffd700;
       text-align: center;
-      padding: 50px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #ffd700;
+      border-radius: 15px;
+      background: #111;
     }
     h1 {
-      color: gold;
-      margin-bottom: 30px;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      background: gold;
-      color: #111;
-      text-decoration: none;
-      border-radius: 8px;
+    .highlight {
+      background: #ffd700;
+      color: black;
+      padding: 10px;
+      border-radius: 10px;
       font-weight: bold;
     }
-    .btn:hover {
-      background: orange;
+    input {
+      margin: 15px 0;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ffd700;
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .enter-btn {
+      background: white;
+      color: black;
+    }
+    .whatsapp {
+      background: #25D366;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <h1>TokioKazino.net</h1>
-  <p>Əlaqə üçün WhatsApp nömrələrimiz:</p>
+  <div class="container">
+    <p class="highlight">yuksek XİDMƏT, YÜKSƏK QAZANC İMKANLARI</p>
+    <h1>👑 Tokio Kazino</h1>
+    <p>Şansa  toxunuş – Tokio Kazino ilə tanış ol!</p>
 
-  <a href="https://wa.me/380638150101" target="_blank" class="btn">
-    📞 Əsas nömrə
-  </a>
+    <!-- Kod daxil etmə -->
+    <input type="text" id="code" placeholder="Kod yazın">
+    <button class="enter-btn" onclick="redirect()">GİRİŞ</button>
 
-  <a href="https://wa.me/380636150101" target="_blank" class="btn">
-    📞 Ehtiyyat nömrə
-  </a>
+    <!-- WhatsApp düymələri -->
+    <a href="https://wa.me/380638150101" target="_blank">
+      <button class="whatsapp">Əsas WhatsApp</button>
+    </a>
+    <a href="https://wa.me/380636150101" target="_blank">
+      <button class="whatsapp">Ehtiyat WhatsApp</button>
+    </a>
+  </div>
 
+  <script>
+    function redirect() {
+      let code = document.getElementById("code").value;
+      if (code.trim() !== "") {
+        window.location.href = "https://fastloto365.com";
+      } else {
+        alert("Zəhmət olmasa hər hansı bir kod yazın!");
+      }
+    }
+  </script>
 </body>
 </html>
