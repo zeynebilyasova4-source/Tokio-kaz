@@ -7,76 +7,153 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: #ffd700;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
+
     .container {
-      max-width: 400px;
-      margin: 50px auto;
-      padding: 20px;
+      max-width: 420px;
+      width: 100%;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.95);
       border: 2px solid #ffd700;
-      border-radius: 15px;
-      background: #111;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards;
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     h1 {
-      font-size: 28px;
+      font-size: 32px;
       margin-bottom: 10px;
+      text-shadow: 0 0 15px #ffd700;
+      animation: glow 2s infinite alternate;
     }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ffd700;
+      }
+      to {
+        text-shadow: 0 0 25px #ffae00, 0 0 35px #ffd700;
+      }
+    }
+
     .highlight {
+      display: inline-block;
+      padding: 8px 15px;
       background: #ffd700;
-      color: black;
-      padding: 10px;
-      border-radius: 10px;
+      color: #000;
+      border-radius: 15px;
       font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     input {
-      margin: 15px 0;
-      padding: 10px;
+      margin: 20px 0;
+      padding: 14px;
       font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ffd700;
+      border-radius: 12px;
+      border: 2px solid #ffd700;
       width: 100%;
       text-align: center;
+      outline: none;
+      background: #111;
+      color: #ffd700;
+      transition: 0.3s;
     }
-    button {
+    input:focus {
+      box-shadow: 0 0 12px #ffd700;
+    }
+
+    .btn {
       display: block;
-      margin: 10px auto;
-      padding: 12px 20px;
+      margin: 12px auto;
+      padding: 14px 22px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      width: 100%;
     }
+
     .enter-btn {
-      background: white;
+      background: linear-gradient(90deg, #ffd700, #ffae00);
       color: black;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+      animation: pulse 2s infinite;
     }
+    .enter-btn:hover {
+      background: linear-gradient(90deg, #ffae00, #ffd700);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #ffd700; }
+      50% { box-shadow: 0 0 20px #ffd700; }
+      100% { box-shadow: 0 0 5px #ffd700; }
+    }
+
     .whatsapp {
-      background: #25D366;
+      background: linear-gradient(90deg, #25D366, #128C7E);
       color: white;
+      box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <p class="highlight">yuksek XİDMƏT, YÜKSƏK QAZANC İMKANLARI</p>
+    <span class="highlight">ELİT XİDMƏT, YÜKSƏK QAZANC İMKANLARI</span>
     <h1>👑 Tokio Kazino</h1>
-    <p>Şansa  toxunuş – Tokio Kazino ilə tanış ol!</p>
+    <p>Şansa elit toxunuş – Tokio Kazino ilə tanış ol!</p>
 
     <!-- Kod daxil etmə -->
     <input type="text" id="code" placeholder="Kod yazın">
-    <button class="enter-btn" onclick="redirect()">GİRİŞ</button>
+    <button class="btn enter-btn" onclick="redirect()">🚀 GİRİŞ</button>
 
     <!-- WhatsApp düymələri -->
-    <a href="https://wa.me/380638150101" target="_blank">
-      <button class="whatsapp">Əsas WhatsApp</button>
-    </a>
-    <a href="https://wa.me/380636150101" target="_blank">
-      <button class="whatsapp">Ehtiyat WhatsApp</button>
-    </a>
+    <a href="https://wa.me/380638150101" target="_blank" class="btn whatsapp">📱 Əsas WhatsApp</a>
+    <a href="https://wa.me/380636150101" target="_blank" class="btn whatsapp">📱 Ehtiyat WhatsApp</a>
+
+    <div class="footer">+18 | TokioKazino.net</div>
   </div>
 
   <script>
@@ -85,7 +162,7 @@
       if (code.trim() !== "") {
         window.location.href = "https://fastloto365.com";
       } else {
-        alert("Zəhmət olmasa hər hansı bir kod yazın!");
+        alert("Zəhmət olmasa kod yazın!");
       }
     }
   </script>
