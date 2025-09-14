@@ -3,38 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tokiokazino.net</title>
-  <link rel="stylesheet" href="style.css">
+  <title>TOKIOKAZINO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: gold;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: gold;
+      color: #111;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: orange;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="banner">ELİT XİDMƏT, YÜKSƏK QAZANC İMKANLARI</div>
+  <h1>TokioKazino.net</h1>
+  <p>Əlaqə üçün WhatsApp nömrələrimiz:</p>
 
-    <h1>👑 Tokio Kazino</h1>
-    <p class="subtitle">Şansa elit toxunuş – Tokio Kazino ilə tanış ol!</p>
+  <a href="https://wa.me/380638150101" target="_blank" class="btn">
+    📞 Əsas nömrə
+  </a>
 
-    <!-- Kod qutusu -->
-    <input type="text" id="kod" placeholder="00 00 00 00">
-    <button onclick="yoxla()" class="btn login">Kodu daxil et</button>
+  <a href="https://wa.me/380636150101" target="_blank" class="btn">
+    📞 Ehtiyyat nömrə
+  </a>
 
-    <!-- WhatsApp düyməsi -->
-    <a href="https://wa.me/380638150101" class="btn whatsapp">📲 WhatsApp-a keçid</a>
-
-    <div class="age">+18</div>
-
-    <p class="footer">Hər kəsə bol uduşlar və qazançlar arzu edirik!<br>
-    © 2025 Tokiokazino.net</p>
-  </div>
-
-  <script>
-    function yoxla() {
-      let kod = document.getElementById("kod").value;
-      if (kod.trim() !== "") {
-        window.location.href = "https://fastloto365.com";
-      } else {
-        alert("Zəhmət olmasa kod daxil edin!");
-      }
-    }
-  </script>
 </body>
 </html>
